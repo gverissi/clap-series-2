@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link rel="preload" href="../assets/hero.png" as="image">
+	<link rel="preload" href="../assets/vilain.png" as="image">
+	<link rel="preload" href="../assets/back_scale.png" as="image"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title>Document</title>
+</head>
+<body>
+
+	<audio id="cardFlip">
+		<source src="assets/sounds/card_flip.mp3" type="audio/mpeg">
+	</audio>
+	
+	<div id='container'>
+
+		<div class="perso">
+			<h2 style="text-align: center;">Hero</h2>
+			<div class="div_avatar">
+				<img class="avatar" src="assets/images/avatars/hero.png" alt="">
+			</div>
+			<div class="player_cards">
+				<div class="div_card"><img id="heroCard1" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+				<div class="div_card"><img id="heroCard2" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			</div>
+		</div>
+
+		<div>
+			<button class="btn_play" onclick="dealer()">Jouer !</button>
+			<!-- <img class="btn_play" src="../assets/jeton.png" alt=""> -->
+		</div>
+
+		<div class="perso">
+			<h2 style="text-align: center;">Vilain</h2>
+			<div class="div_avatar">
+				<img class="avatar" src="assets/images/avatars/vilain.png" alt="">
+			</div>
+			<div class="player_cards">
+				<div class="div_card"><img id="vilainCard1" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+				<div class="div_card"><img id="vilainCard2" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="table">
+		<div class="cards">
+			<div class="div_card"><img id="card1" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			<div class="div_card"><img id="card2" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			<div class="div_card"><img id="card3" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			<div class="div_card"><img id="card4" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			<div class="div_card"><img id="card5" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+		</div>
+	</div>
+
+	<script src="assets/js/partials.js"></script>
+	<script src="assets/js/dealer.js"></script>
+	
+
+
+</body>
+</html>

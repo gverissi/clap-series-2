@@ -32,11 +32,18 @@ h2 {
 	margin-top: 1.5vw;
 }
 
-.card {
+.div_card {
 	width: 7vw;
+	height: 10.048vw;
+}
+
+.card {
+	width: 100%;
 	border-style: solid;
-	border-width: 0.2vw;
-	border-radius: 0.8vw;
+	border-width: 0.1vw;
+	border-radius: 0.6vw;
+	position: relative;
+	box-sizing: border-box;
 }
 
 .table {
