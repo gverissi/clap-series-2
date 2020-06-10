@@ -36,22 +36,51 @@ function dealer() {
 		preloadImage(imagesSrc[j])
 	}
 
-	// Flip cards one by one
-	let idSwitchCard = setInterval(switchCard, 800)
-	let i = 0
-	function switchCard() {
-		if (i == 8) {
-			clearInterval(idSwitchCard)
-		}
-		flipCard(imagesId[i], imagesSrc[i])
-		i++
+	// // Flip cards one by one
+	// let idSwitchCard = setInterval(switchCard, 800)
+	// let i = 0
+	// function switchCard() {
+	// 	if (i == 8) {
+	// 		clearInterval(idSwitchCard)
+	// 	}
+	// 	flipCard(imagesId[i], imagesSrc[i])
+	// 	i++
+	// }
+
+	for (let k = 0; k < 9; k++) {
+		imagesId[k].src = imagesSrc[k]
 	}
+
+	// Hands
+	let comonHand = [deck[4], deck[5], deck[6], deck[7], deck[8]]
+	let heroHand = [deck[0], deck[2], comonHand].flat()
+	let vilainHand = [deck[1], deck[3], comonHand].flat()
+
+	console.log("Pour le hero :")
+	console.log("isAPair = ", isAPair(heroHand))
+	console.log("isAFlush = ", isAFlush(heroHand))
+	console.log("isAFull = ", isAFull(heroHand))
+	let hero = bestCombo(heroHand)
+	console.log("hero = ", hero)
+
+	console.log("Pour le vilain :")
+	console.log("isAPair = ", isAPair(vilainHand))
+	console.log("isAFlush = ", isAFlush(vilainHand))
+	console.log("isAFull = ", isAFull(vilainHand))
+	let vilain = bestCombo(vilainHand)
+	console.log("vilain = ", vilain)
+	
+	console.log("Winner :")
+	console.log("bestCombo = ", compareCombos(hero, vilain))
+	
+	
+	console.log("==================")
 
 }
 
 
 function flipCard(elem, src) {
-	cardFlip.play()
+	// cardFlip.play()
 	let width = elem.width
 	let height = elem.height
 	let sign = 1
