@@ -1,8 +1,8 @@
 
 h2 {
 	font-size: 2vw;
-	margin-top: 1.5vw;
-	margin-bottom: 1.5vw;
+	margin-top: 1vw;
+	margin-bottom: 1vw;
 }
 
 #container {
@@ -11,10 +11,7 @@ h2 {
 }
 
 .perso {
-	/* display: flex; */
-	/* justify-content: center; */
-	/* flex-wrap: wrap; */
-	width: 18vw;
+	width: 16vw;
 }
 
 .div_avatar {
@@ -23,18 +20,18 @@ h2 {
 }
 
 .avatar {
-	height: 10vw;
+	height: 8vw;
 }
 
 .player_cards {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 1.5vw;
+	margin-top: 2vw;
 }
 
 .div_card {
 	width: 7vw;
-	height: 10.048vw;
+	height: 10.185vw; /* 323/222*width  */
 }
 
 .card {
@@ -46,25 +43,56 @@ h2 {
 	box-sizing: border-box;
 }
 
+.btn_play {
+	/* position: relative; */
+	/* font-size: 1.5vw;
+	padding: 1vw 2vw;
+	top: 72%;
+	border-radius: 1vw; */
+	/* top: 20%; */
+	width: 7vw;
+	height: 7vw;
+	background-repeat: no-repeat;
+	background-size: 7vw 7vw;
+	border-radius: 50%;
+}
+
+#message {
+	visibility: hidden;
+	padding: 1vw;
+	border-radius: 0.6vw;
+	background-color: #5cb85c;
+}
+
+p {
+	text-align: center;
+	margin: 0;
+	font-size: 1.5vw;
+}
+
+.div_btns {
+	display: flex;
+	justify-content: center;
+	padding-top: 1vw;
+}
+
+.btns {
+	padding: 1vw;
+	margin: 0 2vw;
+	width: 10vw;
+	font-size: 1vw;
+	border-radius: 1vw;
+}
+
 .table {
 	display: flex;
 	justify-content: center;
-	margin-top: 6vw;
+	margin-top: 1vw;
 }
 
 .cards {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 1.5vw;
-	width: 50vw;
-}
-
-.btn_play {
-	font-size: 1.5vw;
-	padding: 1vw 2vw;
-	position: relative;
-	top: 72%;
-	border-radius: 1vw;
-	/* top: 70%;
-	width: 7vw; */
+	margin-top: 2vw;
+	width: 40vw;
 }

@@ -3,9 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <link rel="preload" href="../assets/hero.png" as="image">
-	<link rel="preload" href="../assets/vilain.png" as="image">
-	<link rel="preload" href="../assets/back_scale.png" as="image"> -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<title>Document</title>
 </head>
@@ -29,8 +26,20 @@
 		</div>
 
 		<div>
-			<button class="btn_play" onclick="dealer()">Jouer !</button>
-			<!-- <img class="btn_play" src="../assets/jeton.png" alt=""> -->
+
+			<div style="display: flex; justify-content: center; padding: 3vw 0;">
+				<button id="play_btn" class="btn_play" style="background-image: url(assets/images/jeton.png);" onclick="dealer()"></button>
+			</div>
+			<div id="message">
+				<div>
+					<p id="text_message">Vous avez gagné !</p>
+				</div>
+				<div class="div_btns">
+					<button class="btns" onclick="playAgain()">Rejouer !</button>
+					<button class="btns">Récompanse !</button>
+				</div>
+			</div>
+			
 		</div>
 
 		<div class="perso">
@@ -45,6 +54,16 @@
 		</div>
 
 	</div>
+
+	<!-- <div id="message">
+		<div>
+			<p id="text_message">nesciunt mollitia quia maiores deserunt numquam. Incidunt quia voluptatibus placeat!</p>
+		</div>
+		<div class="div_btns">
+			<button class="btns" style="margin-right: 2vw;" onclick="playAgain()">Rejouer !</button>
+			<button class="btns" style="margin-left: 2vw;">Récompanse !</button>
+		</div>
+	</div> -->
 
 	<div class="table">
 		<div class="cards">
@@ -65,6 +84,7 @@
 	<script src="assets/js/occurences.js"></script>
 	<script src="assets/js/bestCombo.js"></script>
 	<script src="assets/js/compareCombos.js"></script>
+	<script src="assets/js/playAgain.js"></script>
 	
 
 

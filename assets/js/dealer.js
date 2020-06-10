@@ -11,104 +11,114 @@
  * 
  */
 
-// var count = 0
-
 function dealer() {
-	// Create a deck of 52 cards
-	let deck = VALUES.map(v => TYPES.map(t => v + t)).flat().shuffle()
-	// let deck = shuffle(VALUES.map(v => TYPES.map(t => v + t)).flat())
+
+	play_btn.disabled = true
+
+	// Create a shuffled deck of 52 cards
+	let deck = DECK_52.shuffle()
 	
 	// Create arrays of id's and url's
 	let imagesId = [heroCard1, vilainCard1, heroCard2, vilainCard2, card1, card2, card3, card4, card5]
-	let imagesSrc = [
-		getCardName(deck[0]), getCardName(deck[1]), getCardName(deck[2]),
-		getCardName(deck[3]), getCardName(deck[4]), getCardName(deck[5]),
-		getCardName(deck[6]), getCardName(deck[7]), getCardName(deck[8])
-	]
+	let allCards = deck.slice(0, 9)
+	let imagesSrc = allCards.map(card => getCardName(card))
 
-	// Preload images
-	function preloadImage(url)
-	{
-		var img=new Image()
-		img.src=url;
-	}
-	for (let j = 0; j < imagesSrc.length; j++) {
-		preloadImage(imagesSrc[j])
-	}
-
-	// // Flip cards one by one
-	// let idSwitchCard = setInterval(switchCard, 800)
-	// let i = 0
-	// function switchCard() {
-	// 	if (i == 8) {
-	// 		clearInterval(idSwitchCard)
-	// 	}
-	// 	flipCard(imagesId[i], imagesSrc[i])
-	// 	i++
-	// }
-
-	for (let k = 0; k < 9; k++) {
-		imagesId[k].src = imagesSrc[k]
-	}
+	// Set of cards
+	let comonCards = allCards.slice(4, 9)
+	let heroCards = [deck[0], deck[2], comonCards].flat()
+	let vilainCards = [deck[1], deck[3], comonCards].flat()
 
 	// Hands
-	let comonHand = [deck[4], deck[5], deck[6], deck[7], deck[8]]
-	let heroHand = [deck[0], deck[2], comonHand].flat()
-	let vilainHand = [deck[1], deck[3], comonHand].flat()
+	let heroHand = bestCombo(heroCards)
+	let vilainHand = bestCombo(vilainCards)
+	
+	// Winner
+	let winnerHand = compareCombos(heroHand, vilainHand)
+	let isHeroWin = winnerHand.isEqualTo(heroHand)
+	let isVilainWin = winnerHand.isEqualTo(vilainHand)
+
+	// if (isHeroWin && isVilainWin) {
+	// 	text_message.innerText = "Egalité"
+	// 	message.style.backgroundColor = "#f0ad4e"
+	// 	message.style.visibility = "visible"
+	// }
+	// else if (isHeroWin) {
+	// 	text_message.innerText = "Vous avez gagné"
+	// 	message.style.backgroundColor = "#5cb85c"
+	// 	message.style.visibility = "visible"
+	// }
+	// else {
+	// 	text_message.innerText = "Vous avez perdu"
+	// 	message.style.backgroundColor = "#d9534f"
+	// 	message.style.visibility = "visible"
+	// }
+
+	// Flip cards one by one
+	let idSwitchCard = setInterval(switchCard, 200)
+	let i = 0
+	function switchCard() {
+		if (i == 9) {
+			funMessage(isHeroWin, isVilainWin)
+			clearInterval(idSwitchCard)
+		}
+		else {
+			flipCard(imagesId[i], imagesSrc[i])
+			i++
+		}
+	}
+
+	// // Display all cards at once
+	// for (let k = 0; k < 9; k++) {
+	// 	imagesId[k].src = imagesSrc[k]
+	// }
 
 	console.log("Pour le hero :")
-	console.log("isAPair = ", isAPair(heroHand))
-	console.log("isAFlush = ", isAFlush(heroHand))
-	console.log("isAFull = ", isAFull(heroHand))
-	let hero = bestCombo(heroHand)
-	console.log("hero = ", hero)
+	console.log("isAPair = ", isAPair(heroCards))
+	console.log("isAFlush = ", isAFlush(heroCards))
+	console.log("isAFull = ", isAFull(heroCards))
+	console.log("heroHand = ", heroHand)
 
 	console.log("Pour le vilain :")
-	console.log("isAPair = ", isAPair(vilainHand))
-	console.log("isAFlush = ", isAFlush(vilainHand))
-	console.log("isAFull = ", isAFull(vilainHand))
-	let vilain = bestCombo(vilainHand)
-	console.log("vilain = ", vilain)
-	
+	console.log("isAPair = ", isAPair(vilainCards))
+	console.log("isAFlush = ", isAFlush(vilainCards))
+	console.log("isAFull = ", isAFull(vilainCards))
+	console.log("vilainHand = ", vilainHand)
+
 	console.log("Winner :")
-	console.log("bestCombo = ", compareCombos(hero, vilain))
-	
+	console.log("bestCombo = ", winnerHand)
 	
 	console.log("==================")
 
 }
 
 
+function funMessage(isHeroWin, isVilainWin) {
+	if (isHeroWin && isVilainWin) {
+		text_message.innerText = "Egalité"
+		message.style.backgroundColor = "#f0ad4e"
+		message.style.visibility = "visible"
+	}
+	else if (isHeroWin) {
+		text_message.innerText = "Vous avez gagné"
+		message.style.backgroundColor = "#5cb85c"
+		message.style.visibility = "visible"
+	}
+	else {
+		text_message.innerText = "Vous avez perdu"
+		message.style.backgroundColor = "#d9534f"
+		message.style.visibility = "visible"
+	}
+}
+
+
 function flipCard(elem, src) {
 	// cardFlip.play()
 	let width = elem.width
-	let height = elem.height
 	let sign = 1
 	let speed = 48
 	let pos = 0
 	let toggle = false
 
-	// // Method 1
-	// let id = setInterval(flip, 40)
-	// function flip() {
-	// 	if (pos >= width && !toggle) {
-	// 		sign = -1
-	// 		toggle = true
-	// 		elem.src = src
-	// 	}
-	// 	else if (pos <= 0 && toggle) {
-	// 		elem.style.width = "100%"
-	// 		clearInterval(id)
-	// 	}
-	// 	else {
-	// 		pos = pos + sign*speed
-	// 		elem.style.width = width - pos + 'px'
-	// 		elem.style.height = "100%"
-	// 		elem.style.left = pos/2 + 'px'
-	// 	}
-	// }
-	
-	// Method 2
 	function flip() {
 		if (pos >= width && !toggle) {
 			sign = -1

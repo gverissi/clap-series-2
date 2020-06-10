@@ -8,51 +8,26 @@ const VALUES_NAME = {
 }
 const TYPES_NAME = {"d": "diamonds", "c": "clubs", "h": "hearts", "s": "spades"}
 const CARDS = {
-	as: "A",
-	king: "K",
-	queen: "Q",
-	jack: "J",
-	ten: "10",
-	nine: "9",
-	height: "8",
-	seven: "7",
-	six: "6",
-	five: "5",
-	four: "4",
-	three: "3",
-	two: "2"
-  }
+	as: "A", king: "K", queen: "Q", jack: "J",
+	ten: "10", nine: "9", height: "8",
+	seven: "7", six: "6", five: "5",
+	four: "4", three: "3", two: "2"
+}
+const DECK_52 = VALUES.map(v => TYPES.map(t => v + t)).flat()
 
-// Shuffle the deck
-// ================
-
-// Method 1: Monkey Patching
+// Monkey Patching to shuffle the deck
 Array.prototype.shuffle = function() {
+	let deck = this.slice(0, this.length)
 	let shufDeck = []
 	let index = 0
-	let size = this.length
+	let size = deck.length
 	for (var j = 0; j < size; j++) {
-		index = Math.floor(Math.random() * this.length)
-		shufDeck.push(this[index])
-		this.splice(index, 1);
+		index = Math.floor(Math.random() * deck.length)
+		shufDeck.push(deck[index])
+		deck.splice(index, 1);
 	}
 	return shufDeck
 }
-
-// Method 2: function
-// function shuffle(deck) {
-// 	let shufDeck = []
-// 	let index = 0
-// 	let size = deck.length
-// 	for (var j = 0; j < size; j++) {
-// 		index = Math.floor(Math.random() * deck.length)
-// 		shufDeck.push(deck[index])
-// 		deck.splice(index, 1);
-// 	}
-// 	return shufDeck
-// }
-
-// ============================================================================
 
 // Get the file name of a card: c = "Ac" => return "ace_of_clubs.png"
 function getCardName(c) {
@@ -139,4 +114,9 @@ function getTypePower(card) {
 		case 's':
 			return 4
 	}
+}
+
+// Monkey Patching to compare 2 arrays
+Array.prototype.isEqualTo = function(arr) {
+	return this.length === arr.length && this.every((value, index) => value === arr[index])
 }
