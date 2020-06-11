@@ -144,6 +144,7 @@ function funMessage(isHeroWin, isVilainWin, heroHandName, vilainHandName) {
 	id_text_vilain.style.visibility = "visible"
 	winnerHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.add("highlight")
+		IMAGES_ID[ind].classList.add("floating")
 	});
 }
 

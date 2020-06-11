@@ -12,5 +12,6 @@ function playAgain() {
 	id_play_btn.disabled = false
 	winnerHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.remove("highlight")
+		IMAGES_ID[ind].classList.remove("floating")
 	});
 }

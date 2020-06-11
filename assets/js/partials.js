@@ -127,17 +127,21 @@ Array.prototype.isEqualTo = function(arr) {
 function highlightHero(x) {
 	winnerHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.remove("highlight")
+		IMAGES_ID[ind].classList.remove("floating")
 	});
 	heroHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.add("highlight")
+		IMAGES_ID[ind].classList.add("floating")
 	});
 }
 function unHighlightHero(x) {
 	heroHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.remove("highlight")
+		IMAGES_ID[ind].classList.remove("floating")
 	});
 	winnerHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.add("highlight")
+		IMAGES_ID[ind].classList.add("floating")
 	});
 }
 
@@ -145,16 +149,20 @@ function unHighlightHero(x) {
 function highlightVilain(x) {
 	winnerHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.remove("highlight")
+		IMAGES_ID[ind].classList.remove("floating")
 	});
 	vilainHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.add("highlight")
+		IMAGES_ID[ind].classList.add("floating")
 	});
 }
 function unHighlightVilain(x) {
 	vilainHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.remove("highlight")
+		IMAGES_ID[ind].classList.remove("floating")
 	});
 	winnerHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.add("highlight")
+		IMAGES_ID[ind].classList.add("floating")
 	});
 }
