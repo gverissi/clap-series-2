@@ -4,39 +4,46 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<title>Document</title>
+	<title>Not a Poker !</title>
 </head>
 <body>
 
-	<audio id="cardFlip">
-		<source src="assets/sounds/card_flip.mp3" type="audio/mpeg">
+	<audio id="id_flipSound">
+		<source src="assets/sounds/card_flip_sound.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="id_chipSound">
+		<source src="assets/sounds/chip_sound.mp3" type="audio/mpeg">
 	</audio>
 	
-	<div id='container'>
+	<div id='id_container'>
 
 		<div class="perso">
-			<h2 style="text-align: center;">Hero</h2>
+			<h2>Hero</h2>
 			<div class="div_avatar">
 				<img class="avatar" src="assets/images/avatars/hero.png" alt="">
 			</div>
 			<div class="player_cards">
-				<div class="div_card"><img id="heroCard1" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
-				<div class="div_card"><img id="heroCard2" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+				<div class="div_card"><img id="id_hero_card1" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+				<div class="div_card"><img id="id_hero_card2" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			</div>
+			<div id="id_text_hero" class="perso_message" onmouseover="highlightHero(this)" onmouseout="unHighlightHero(this)">
+				<p id="id_text_hero_res">Gagnant :</p>
+				<p id="id_text_hero_hand">Full !</p>
 			</div>
 		</div>
 
 		<div>
 
-			<div style="display: flex; justify-content: center; padding: 3vw 0;">
-				<button id="play_btn" class="btn_play" style="background-image: url(assets/images/jeton.png);" onclick="dealer()"></button>
+			<div style="display: flex; justify-content: center; padding: 4vw 0;">
+				<button id="id_play_btn" class="btn_play" style="background-image: url(assets/images/jeton.png);" onclick="dealer()">JOUER !</button>
 			</div>
-			<div id="message">
+			<div id="id_message">
 				<div>
-					<p id="text_message">Vous avez gagné !</p>
+					<p id="id_index_text1">Vous avez gagné !</p>
 				</div>
 				<div class="div_btns">
 					<button class="btns" onclick="playAgain()">Rejouer !</button>
-					<button class="btns">Récompanse !</button>
+					<a href="reward.html"><button class="btns">Récompanse !</button></a>
 				</div>
 			</div>
 			
@@ -48,30 +55,24 @@
 				<img class="avatar" src="assets/images/avatars/vilain.png" alt="">
 			</div>
 			<div class="player_cards">
-				<div class="div_card"><img id="vilainCard1" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
-				<div class="div_card"><img id="vilainCard2" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+				<div class="div_card"><img id="id_vilain_card1" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+				<div class="div_card"><img id="id_vilain_card2" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			</div>
+			<div id="id_text_vilain" class="perso_message" onmouseover="highlightVilain(this)" onmouseout="unHighlightVilain(this)">
+				<p id="id_text_vilain_res">Perdant :</p>
+				<p id="id_text_vilain_hand">Pair !</p>
 			</div>
 		</div>
 
 	</div>
 
-	<!-- <div id="message">
-		<div>
-			<p id="text_message">nesciunt mollitia quia maiores deserunt numquam. Incidunt quia voluptatibus placeat!</p>
-		</div>
-		<div class="div_btns">
-			<button class="btns" style="margin-right: 2vw;" onclick="playAgain()">Rejouer !</button>
-			<button class="btns" style="margin-left: 2vw;">Récompanse !</button>
-		</div>
-	</div> -->
-
 	<div class="table">
 		<div class="cards">
-			<div class="div_card"><img id="card1" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
-			<div class="div_card"><img id="card2" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
-			<div class="div_card"><img id="card3" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
-			<div class="div_card"><img id="card4" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
-			<div class="div_card"><img id="card5" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			<div class="div_card"><img id="id_card1" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			<div class="div_card"><img id="id_card2" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			<div class="div_card"><img id="id_card3" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			<div class="div_card"><img id="id_card4" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
+			<div class="div_card"><img id="id_card5" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
 		</div>
 	</div>
 
@@ -85,6 +86,7 @@
 	<script src="assets/js/bestCombo.js"></script>
 	<script src="assets/js/compareCombos.js"></script>
 	<script src="assets/js/playAgain.js"></script>
+	<!-- <script src="assets/js/sendEmail.js"></script> -->
 	
 
 

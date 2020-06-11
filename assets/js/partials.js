@@ -14,6 +14,8 @@ const CARDS = {
 	four: "4", three: "3", two: "2"
 }
 const DECK_52 = VALUES.map(v => TYPES.map(t => v + t)).flat()
+const IMAGES_ID = [id_hero_card1, id_vilain_card1, id_hero_card2, id_vilain_card2, id_card1, id_card2, id_card3, id_card4, id_card5]
+	
 
 // Monkey Patching to shuffle the deck
 Array.prototype.shuffle = function() {
@@ -119,4 +121,40 @@ function getTypePower(card) {
 // Monkey Patching to compare 2 arrays
 Array.prototype.isEqualTo = function(arr) {
 	return this.length === arr.length && this.every((value, index) => value === arr[index])
+}
+
+// Highlight hero cards
+function highlightHero(x) {
+	winnerHandIndexes.forEach(ind => {
+		IMAGES_ID[ind].classList.remove("highlight")
+	});
+	heroHandIndexes.forEach(ind => {
+		IMAGES_ID[ind].classList.add("highlight")
+	});
+}
+function unHighlightHero(x) {
+	heroHandIndexes.forEach(ind => {
+		IMAGES_ID[ind].classList.remove("highlight")
+	});
+	winnerHandIndexes.forEach(ind => {
+		IMAGES_ID[ind].classList.add("highlight")
+	});
+}
+
+// Highlight vilain cards
+function highlightVilain(x) {
+	winnerHandIndexes.forEach(ind => {
+		IMAGES_ID[ind].classList.remove("highlight")
+	});
+	vilainHandIndexes.forEach(ind => {
+		IMAGES_ID[ind].classList.add("highlight")
+	});
+}
+function unHighlightVilain(x) {
+	vilainHandIndexes.forEach(ind => {
+		IMAGES_ID[ind].classList.remove("highlight")
+	});
+	winnerHandIndexes.forEach(ind => {
+		IMAGES_ID[ind].classList.add("highlight")
+	});
 }
