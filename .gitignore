@@ -1,3 +1,4 @@
 /assets/js/sendEmailToadmin.js
 /assets/js/initEmail.js
 node_modules
+jasmine/lib

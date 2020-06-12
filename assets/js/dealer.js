@@ -32,7 +32,7 @@ function dealer() {
 	function preloadImage(url)
 	{
 		var img=new Image()
-		img.src=url;
+		img.src=url
 	}
 	for (let j = 0; j < imagesSrc.length; j++) {
 		preloadImage(imagesSrc[j])

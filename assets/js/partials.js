@@ -15,7 +15,7 @@ const CARDS = {
 }
 const DECK_52 = VALUES.map(v => TYPES.map(t => v + t)).flat()
 const IMAGES_ID = [id_hero_card1, id_vilain_card1, id_hero_card2, id_vilain_card2, id_card1, id_card2, id_card3, id_card4, id_card5]
-	
+
 
 // Monkey Patching to shuffle the deck
 Array.prototype.shuffle = function() {
@@ -26,7 +26,7 @@ Array.prototype.shuffle = function() {
 	for (var j = 0; j < size; j++) {
 		index = Math.floor(Math.random() * deck.length)
 		shufDeck.push(deck[index])
-		deck.splice(index, 1);
+		deck.splice(index, 1)
 	}
 	return shufDeck
 }
@@ -53,7 +53,7 @@ function allIndexOf(arr, value) {
 	if (arr.indexOf(value) >= 0) {
 		let res = []
 		for( let i = arr.indexOf(value); i >= 0; i = arr.indexOf(value,i+1) ) {
-			res.push(i);
+			res.push(i)
 		}
 		return res
 	}
@@ -128,21 +128,21 @@ function highlightHero(x) {
 	winnerHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.remove("highlight")
 		IMAGES_ID[ind].classList.remove("floating")
-	});
+	})
 	heroHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.add("highlight")
 		IMAGES_ID[ind].classList.add("floating")
-	});
+	})
 }
 function unHighlightHero(x) {
 	heroHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.remove("highlight")
 		IMAGES_ID[ind].classList.remove("floating")
-	});
+	})
 	winnerHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.add("highlight")
 		IMAGES_ID[ind].classList.add("floating")
-	});
+	})
 }
 
 // Highlight vilain cards
@@ -150,19 +150,19 @@ function highlightVilain(x) {
 	winnerHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.remove("highlight")
 		IMAGES_ID[ind].classList.remove("floating")
-	});
+	})
 	vilainHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.add("highlight")
 		IMAGES_ID[ind].classList.add("floating")
-	});
+	})
 }
 function unHighlightVilain(x) {
 	vilainHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.remove("highlight")
 		IMAGES_ID[ind].classList.remove("floating")
-	});
+	})
 	winnerHandIndexes.forEach(ind => {
 		IMAGES_ID[ind].classList.add("highlight")
 		IMAGES_ID[ind].classList.add("floating")
-	});
+	})
 }
