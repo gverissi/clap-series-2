@@ -72,24 +72,25 @@ function dealer() {
 	localStorage.isHeroWin = isHeroWin
 	localStorage.isVilainWin = isVilainWin
 
-	// Flip cards one by one
-	let idSwitchCard = setInterval(switchCard, 200)
-	let i = 0
-	function switchCard() {
-		if (i == 9) {
-			funMessage(isHeroWin, isVilainWin, heroHandName, vilainHandName)
-			clearInterval(idSwitchCard)
-		}
-		else {
-			flipCard(IMAGES_ID[i], imagesSrc[i])
-			i++
-		}
-	}
-
-	// // Display all cards at once
-	// for (let k = 0; k < 9; k++) {
-	// 	IMAGES_ID[k].src = imagesSrc[k]
+	// // Flip cards one by one
+	// let idSwitchCard = setInterval(switchCard, 200)
+	// let i = 0
+	// function switchCard() {
+	// 	if (i == 9) {
+	// 		funMessage(isHeroWin, isVilainWin, heroHandName, vilainHandName)
+	// 		clearInterval(idSwitchCard)
+	// 	}
+	// 	else {
+	// 		flipCard(IMAGES_ID[i], imagesSrc[i])
+	// 		i++
+	// 	}
 	// }
+
+	// Display all cards at once
+	for (let k = 0; k < 9; k++) {
+		IMAGES_ID[k].src = imagesSrc[k]
+	}
+	funMessage(isHeroWin, isVilainWin, heroHandName, vilainHandName)
 
 	console.log("Pour le hero :")
 	console.log("isAPair = ", isAPair(heroCards))

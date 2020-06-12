@@ -91,10 +91,7 @@ function bestCombo(unorderedCards) {
 		}
 	}
 	else {
-		for (let i = 0; i < 5; i++) {
-			hand.push(cards[i])
-		}
-		return hand
+		return cards.slice(0, 5)
 	}
 
 }
