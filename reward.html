@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+	<script src="assets/js/initEmail.js"></script>
 	<title>Recompense</title>
 </head>
 <body>
@@ -17,18 +19,20 @@
 			</div>
 		</div>
 
-		<form id="id_form" action="/index.html">
+		<div id="id_form">
 			<p id="id_reward_text1">Vous avez gagné !</p>
 			<div class="div_input">
-				<input class="input" type="text" id="email" name="email" style="width: 25vw;">
-				<input class="input" type="submit" value="Envoyer">
+				<input class="input" type="text" id="id_email" name="email" style="width: 25vw;">
+				<!-- <input class="input" type="submit" onclick="sendEmailToAdmin()" value="Envoyer"> -->
+				<input class="input" type="button" value="Envoyer" onclick="sendEmailToAdmin()">
 			</div>
 			<p id="id_reward_text2">Truc !</p>
-		</form>
+		</div>
 
 	</main>
-
-	<script src="assets/js/sendEmail.js"></script>
+	
+	<script src="assets/js/rewardMessage.js"></script>
+	<script src="assets/js/sendEmailToAdmin.js"></script>
 	
 </body>
 </html>

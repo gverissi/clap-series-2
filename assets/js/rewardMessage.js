@@ -1,9 +1,9 @@
 
 window.addEventListener('load', function () {
-	sendEmail()
+	rewardMessage()
 })
 
-function sendEmail() {
+function rewardMessage() {
 
 	// Get the winner from localStorage
 	let isHeroWin = localStorage.isHeroWin

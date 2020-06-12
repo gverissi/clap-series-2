@@ -1,1 +1,3 @@
-.DS_Store
+/assets/js/sendEmailToadmin.js
+/assets/js/initEmail.js
+node_modules

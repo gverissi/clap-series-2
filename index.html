@@ -8,15 +8,20 @@
 </head>
 <body>
 
+	<!-- SOUND EFFECTS -->
+	<!-- ============= -->
 	<audio id="id_flipSound">
 		<source src="assets/sounds/card_flip_sound.mp3" type="audio/mpeg">
 	</audio>
 	<audio id="id_chipSound">
 		<source src="assets/sounds/chip_sound.mp3" type="audio/mpeg">
 	</audio>
+	<!-- ================================================================ -->
 	
 	<div id='id_container'>
 
+		<!-- HERO -->
+		<!-- ==== -->
 		<div class="perso">
 			<h2>Hero</h2>
 			<div class="div_avatar">
@@ -31,9 +36,11 @@
 				<p id="id_text_hero_hand">Full !</p>
 			</div>
 		</div>
+		<!-- ================================================================ -->
 
+		<!-- PLAY BUTTON + MESSAGE -->
+		<!-- ===================== -->
 		<div>
-
 			<div style="display: flex; justify-content: center; padding: 4vw 0;">
 				<button id="id_play_btn" class="btn_play" style="background-image: url(assets/images/jeton.png);" onclick="dealer()">JOUER !</button>
 			</div>
@@ -46,9 +53,11 @@
 					<a href="reward.html"><button class="btns">Récompense !</button></a>
 				</div>
 			</div>
-			
 		</div>
+		<!-- ================================================================ -->
 
+		<!-- VILAN -->
+		<!-- ===== -->
 		<div class="perso">
 			<h2 style="text-align: center;">Vilain</h2>
 			<div class="div_avatar">
@@ -63,9 +72,12 @@
 				<p id="id_text_vilain_hand">Pair !</p>
 			</div>
 		</div>
+		<!-- ================================================================ -->
 
 	</div>
 
+	<!-- THE BOARD -->
+	<!-- ========= -->
 	<div class="table">
 		<div class="cards">
 			<div class="div_card"><img id="id_card1" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
@@ -75,6 +87,8 @@
 			<div class="div_card"><img id="id_card5" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
 		</div>
 	</div>
+	<!-- ================================================================ -->
+
 
 	<script src="assets/js/partials.js"></script>
 	<script src="assets/js/dealer.js"></script>
@@ -86,7 +100,6 @@
 	<script src="assets/js/bestCombo.js"></script>
 	<script src="assets/js/compareCombos.js"></script>
 	<script src="assets/js/playAgain.js"></script>
-	<!-- <script src="assets/js/sendEmail.js"></script> -->
 	
 
 
