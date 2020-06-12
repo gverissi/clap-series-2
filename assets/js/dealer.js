@@ -27,6 +27,16 @@ function dealer() {
 	// Create arrays of all cards (9) and url's for the images id
 	let allCards = deck.slice(0, 9)
 	let imagesSrc = allCards.map(card => getCardName(card))
+	
+	// Preload images
+	function preloadImage(url)
+	{
+		var img=new Image()
+		img.src=url;
+	}
+	for (let j = 0; j < imagesSrc.length; j++) {
+		preloadImage(imagesSrc[j])
+	}
 
 	// Set of cards
 	let comonCards = allCards.slice(4, 9)
@@ -72,25 +82,25 @@ function dealer() {
 	localStorage.isHeroWin = isHeroWin
 	localStorage.isVilainWin = isVilainWin
 
-	// // Flip cards one by one
-	// let idSwitchCard = setInterval(switchCard, 200)
-	// let i = 0
-	// function switchCard() {
-	// 	if (i == 9) {
-	// 		funMessage(isHeroWin, isVilainWin, heroHandName, vilainHandName)
-	// 		clearInterval(idSwitchCard)
-	// 	}
-	// 	else {
-	// 		flipCard(IMAGES_ID[i], imagesSrc[i])
-	// 		i++
-	// 	}
-	// }
-
-	// Display all cards at once
-	for (let k = 0; k < 9; k++) {
-		IMAGES_ID[k].src = imagesSrc[k]
+	// Flip cards one by one
+	let idSwitchCard = setInterval(switchCard, 200)
+	let i = 0
+	function switchCard() {
+		if (i == 9) {
+			funMessage(isHeroWin, isVilainWin, heroHandName, vilainHandName)
+			clearInterval(idSwitchCard)
+		}
+		else {
+			flipCard(IMAGES_ID[i], imagesSrc[i])
+			i++
+		}
 	}
-	funMessage(isHeroWin, isVilainWin, heroHandName, vilainHandName)
+
+	// // Display all cards at once
+	// for (let k = 0; k < 9; k++) {
+	// 	IMAGES_ID[k].src = imagesSrc[k]
+	// }
+	// funMessage(isHeroWin, isVilainWin, heroHandName, vilainHandName)
 
 	console.log("Pour le hero :")
 	console.log("isAPair = ", isAPair(heroCards))
