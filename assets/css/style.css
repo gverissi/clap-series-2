@@ -6,13 +6,6 @@
 /* index.html */
 /* ========== */
 
-h2 {
-	font-size: 2vw;
-	margin-top: 1vw;
-	margin-bottom: 1vw;
-	text-align: center;
-}
-
 #id_container {
 	display: flex;
 	justify-content: space-around;
@@ -49,6 +42,7 @@ h2 {
 	border-radius: 0.6vw;
 	position: relative;
 	box-sizing: border-box;
+	background-color: cornsilk;
 }
 
 .perso_message {
@@ -69,8 +63,10 @@ h2 {
 	font-size: 1vw;
 	width: 7vw;
 	height: 7vw;
+	background-image: url("../images/jeton.png");
 	background-repeat: no-repeat;
 	background-size: cover;
+	/* background-position: center; */
 	border-radius: 50%;
 	/* border: 2px solid grey; */
 	border-style: none;
@@ -89,12 +85,6 @@ h2 {
 	padding: 1vw;
 	border-radius: 0.6vw;
 	background-color: #5cb85c;
-}
-
-p {
-	text-align: center;
-	margin: 0;
-	font-size: 1.5vw;
 }
 
 .div_btns {
@@ -122,6 +112,77 @@ p {
 	justify-content: space-between;
 	/* margin-top: 2vw; */
 	width: 40vw;
+}
+
+.bank {
+	width: 7vw; height: 3vw;
+	background-size: cover;
+	background-position: center;
+	background-color: honeydew;
+	border-radius: 0.5vw;
+	margin: 1.5vw 0;
+}
+/* ============================================================================ */
+
+
+/* COMMUN */
+/* ====== */
+
+.flex_center {
+	display: flex;
+	justify-content: center;
+}
+
+.flex_column {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex_between {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex_around {
+	display: flex;
+	justify-content: space-around;
+}
+
+.text_center {
+	text-align: center;
+}
+
+p {
+	margin: 0;
+	font-size: 1.5vw;
+}
+
+h1 {
+	font-size: 3vw;
+	margin: 0;
+	text-align: center;
+}
+
+h2 {
+	font-size: 2.5vw;
+	margin-top: 1vw;
+	margin-bottom: 1vw;
+	text-align: center;
+}
+
+h3 {
+	font-size: 2vw;
+	margin: 0;
+	/* margin-top: 1vw; */
+	margin-bottom: 1vw;
+	text-align: center;
+}
+
+h4 {
+	font-size: 1.5vw;
+	margin: 0;
+	margin-bottom: 1vw;
+	text-align: center;
 }
 
 /* ============================================================================ */

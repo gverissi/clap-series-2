@@ -9,24 +9,37 @@
 	<title>Recompense</title>
 </head>
 <body>
+
+
+	<!-- HEADER -->
+	<!-- ====== -->
+	<div class="flex_between" style="background-color: grey; margin-bottom: 2vw">
+		<a href="index.html" style="margin-left: 3vw; text-decoration: none;"><h1>THIS IS NOT POKER</h1></a>
+		<div class="flex_between" style="width: 27vw; margin-right: 3vw; padding: 0.4vw 0;">
+			<button style="font-size: 1vw; padding: 0 1vw;"><a href="index.html" style="text-decoration: none;">Jouez</a></button>
+			<button style="font-size: 1vw; padding: 0 1vw;">Nos engagements</button>
+			<button style="font-size: 1vw; padding: 0 1vw;">Les partenaires</button>
+		</div>
+	</div>
+	<!-- ================================================================ -->
 	
 	<main>
 
 		<div>
-			<h2 style="text-align: center;">Hero</h2>
+			<h2>Hero</h2>
 			<div class="div_avatar">
 				<img class="avatar" src="assets/images/avatars/hero.png" alt="">
 			</div>
 		</div>
 
 		<div id="id_form">
-			<p id="id_reward_text1">Vous avez gagné !</p>
+			<p id="id_reward_text1" class="text_center">Vous avez gagné !</p>
 			<div class="div_input">
 				<input class="input" type="text" id="id_email" name="email" style="width: 25vw;">
 				<!-- <input class="input" type="submit" onclick="sendEmailToAdmin()" value="Envoyer"> -->
 				<input class="input" type="button" value="Envoyer" onclick="sendEmailToAdmin()">
 			</div>
-			<p id="id_reward_text2">Truc !</p>
+			<p id="id_reward_text2" class="text_center">Truc !</p>
 		</div>
 
 	</main>
