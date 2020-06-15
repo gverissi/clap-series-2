@@ -1,10 +1,15 @@
 * {
-	outline: none;
+	outline: none;font-family: 'Piedra', cursive;
 }
 
 
 /* index.html */
 /* ========== */
+
+main {
+	background-color: dodgerblue;
+	padding: 2vw 0;
+}
 
 #id_container {
 	display: flex;
@@ -114,6 +119,11 @@
 	width: 40vw;
 }
 
+footer {
+	background-color: brown;
+	padding: 2vw 0
+}
+
 .bank {
 	width: 7vw; height: 3vw;
 	background-size: cover;
@@ -160,7 +170,7 @@ p {
 h1 {
 	font-size: 3vw;
 	margin: 0;
-	text-align: center;
+	color: goldenrod;
 }
 
 h2 {
@@ -168,6 +178,7 @@ h2 {
 	margin-top: 1vw;
 	margin-bottom: 1vw;
 	text-align: center;
+	color: goldenrod;
 }
 
 h3 {
@@ -176,6 +187,7 @@ h3 {
 	/* margin-top: 1vw; */
 	margin-bottom: 1vw;
 	text-align: center;
+	color: goldenrod;
 }
 
 h4 {
@@ -183,6 +195,7 @@ h4 {
 	margin: 0;
 	margin-bottom: 1vw;
 	text-align: center;
+	color: goldenrod;
 }
 
 /* ============================================================================ */
