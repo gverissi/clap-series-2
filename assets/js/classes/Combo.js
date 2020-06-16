@@ -20,6 +20,11 @@ class Combo {
 			let cardType = new Card(hand[0]).type()
 			handName = `Flush : ${TYPES_NAME[cardType]}`
 		}
+		else if (player.hasAStraight()) {
+			hand = this.getCards(player.valueOcc, [1])
+			let cardValue = new Card(hand[0]).value()
+			handName = `Suite hauteur : ${VALUES_NAME[cardValue]}`
+		}
 		else if (player.hasAThree()) {
 			hand = this.getCards(player.valueOcc, [3, 1])
 			let cardValue = new Card(hand[0]).value()

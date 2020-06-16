@@ -26,7 +26,11 @@ function main() {
 	
 	// Create arrays of all cards (9) and url's for the images id
 	let allCards = deck.cards(0, 8)
-	// allCards = ["2h", "4h", "5d", "2s", "Ad", "Qd", "10d", "8d", "Jd"]
+	// allCards = ["2h", "4h", "5d", "2s", "6d", "5s", "4d", "3d", "2d"]
+	// allCards = ["2h", "Jh", "5d", "Qs", "6d", "5s", "4d", "3d", "2d"]
+	// allCards = ["2h", "Jh", "5d", "As", "6d", "5s", "4d", "3d", "2d"]
+	// allCards = ["2h", "Jh", "5h", "Qs", "Qd", "Js", "10d", "9d", "8d"]
+	allCards = ["2h", "Jh", "5h", "Qs", "Kd", "Js", "10d", "9d", "7d"]
 	console.log("allCards = ", allCards)
 	let imagesSrc = allCards.map(card => {
 		let cardObj = new Card(card)

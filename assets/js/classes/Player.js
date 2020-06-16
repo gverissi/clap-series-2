@@ -57,6 +57,33 @@ class Player {
 		return nbOcc.includes(5) || nbOcc.includes(6) || nbOcc.includes(7)
 	}
 
+	hasAStraight() {
+		let combo = new Combo()
+		let orderedCards = combo.orderCards(this.cards).reverse()
+		let scores = orderedCards.map(card => {
+			let cardObj = new Card(card)
+			return cardObj.valueScore()
+		})
+		scores = this.unique(scores)
+		if (scores.includes(14)) scores = [1].concat(scores)
+		console.log("scores", scores)
+		if (scores.length > 4) {
+			for (let i = 0; i < scores.length - 4; i++) {
+				let u0 = scores[i]
+				let un = scores[i + 4]
+				if (un == u0 + 4) {
+					let sumArith = 5 * (u0 + un) / 2
+					let sum = 0
+					for (let j = i; j < i + 5; j++) {
+						sum += scores[j]
+					}
+					if (sum == sumArith) return true
+				}
+			}
+		}
+		return false
+	}
+
 	hasAThree() {
 		let nbOcc = Object.values(this.valueOcc).map(cards => cards.length)
 		return nbOcc.includes(3)
@@ -70,6 +97,15 @@ class Player {
 	hasAPair() {
 		let nbOcc = Object.values(this.valueOcc).map(cards => cards.length)
 		return nbOcc.includes(2)
+	}
+
+	unique (arr) {
+		let result = []
+		for (let i = 0; i < arr.length; i++)
+			if (!(result.includes(arr[i]))) {
+				result.push(arr[i])
+			}
+		return result
 	}
 
 }
