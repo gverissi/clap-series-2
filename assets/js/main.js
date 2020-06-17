@@ -26,6 +26,8 @@
 // }
 // console.log(result.parsed)
 
+console.log("process.env.USER_ID = ", process.env.USER_ID)
+
 var heroHandIndexes = []
 var vilainHandIndexes = []
 var winnerHandIndexes = []
@@ -44,7 +46,7 @@ function main() {
 	// allCards = ["2h", "Jh", "5d", "Qs", "6d", "5s", "4d", "3d", "2d"]
 	// allCards = ["2h", "Jh", "5d", "As", "6d", "5s", "4d", "3d", "2d"]
 	// allCards = ["2h", "Jh", "5h", "Qs", "Qd", "Js", "10d", "9d", "8d"]
-	allCards = ["2h", "Jh", "5h", "Qs", "Kd", "Js", "10d", "9d", "7d"]
+	// allCards = ["2h", "Jh", "5h", "Qs", "Kd", "Js", "10d", "9d", "7d"]
 	console.log("allCards = ", allCards)
 	let imagesSrc = allCards.map(card => {
 		let cardObj = new Card(card)
