@@ -40,7 +40,7 @@
 			<!-- HERO -->
 			<!-- ==== -->
 			<div class="perso">
-				<h3>Hero</h3>
+				<h3 class="text_center">Hero</h3>
 				<div class="div_avatar">
 					<img class="avatar" src="assets/images/avatars/hero.png" alt="">
 				</div>
@@ -48,7 +48,7 @@
 					<div class="div_card"><img id="id_hero_card1" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
 					<div class="div_card"><img id="id_hero_card2" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
 				</div>
-				<div id="id_text_hero" class="perso_message" onmouseover="highlightHero(this)" onmouseout="unHighlightHero(this)">
+				<div id="id_text_hero" class="perso_message" onmouseover="highlight(this)" onmouseout="unHighlight(this)">
 					<p id="id_text_hero_res" class="text_center">Gagnant :</p>
 					<p id="id_text_hero_hand" class="text_center">Full !</p>
 				</div>
@@ -59,7 +59,7 @@
 			<!-- ===================== -->
 			<div>
 				<div style="display: flex; justify-content: center; padding: 4vw 0;">
-					<button id="id_play_btn" class="btn_play" onclick="dealer()">JOUER !</button>
+					<button id="id_play_btn" class="btn_play" onclick="main()">JOUER !</button>
 				</div>
 				<div id="id_message">
 					<div>
@@ -76,7 +76,7 @@
 			<!-- VILAN -->
 			<!-- ===== -->
 			<div class="perso">
-				<h3>Vilain</h3>
+				<h3 class="text_center">Vilain</h3>
 				<div class="div_avatar">
 					<img class="avatar" src="assets/images/avatars/vilain.png" alt="">
 				</div>
@@ -84,7 +84,7 @@
 					<div class="div_card"><img id="id_vilain_card1" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
 					<div class="div_card"><img id="id_vilain_card2" class="card" src="assets/images/cards/back_scale.png" alt=""></div>
 				</div>
-				<div id="id_text_vilain" class="perso_message" onmouseover="highlightVilain(this)" onmouseout="unHighlightVilain(this)">
+				<div id="id_text_vilain" class="perso_message" onmouseover="highlight(this)" onmouseout="unHighlight(this)">
 					<p id="id_text_vilain_res" class="text_center">Perdant :</p>
 					<p id="id_text_vilain_hand" class="text_center">Pair !</p>
 				</div>
@@ -194,16 +194,16 @@
 	<!-- ================================================================ -->
 
 
-	<script src="assets/js/partials.js"></script>
-	<script src="assets/js/dealer.js"></script>
-	<script src="assets/js/isAPair.js"></script>
-	<script src="assets/js/isAflush.js"></script>
-	<script src="assets/js/isAFull.js"></script>
-	<script src="assets/js/orderCards.js"></script>
-	<script src="assets/js/occurences.js"></script>
-	<script src="assets/js/bestCombo.js"></script>
-	<script src="assets/js/compareCombos.js"></script>
-	<script src="assets/js/playAgain.js"></script>
+	<script src="assets/js/const/cards_const.js"></script>
+	<script src="assets/js/const/images_id.js"></script>
+	<script src="assets/js/front/anim.js"></script>
+	<script src="assets/js/front/indexMessage.js"></script>
+	<script src="assets/js/fun/playAgain.js"></script>
+	<script src="assets/js/classes/Deck.js"></script>
+	<script src="assets/js/classes/Card.js"></script>
+	<script src="assets/js/classes/Player.js"></script>
+	<script src="assets/js/classes/Combo.js"></script>
+	<script src="assets/js/main.js"></script>
 	
 
 

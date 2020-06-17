@@ -1,4 +1,5 @@
-/assets/js/sendEmailToadmin.js
-/assets/js/initEmail.js
+/assets/js/email/sendEmailToadmin.js
+/assets/js/email/initEmail.js
 node_modules
 jasmine/lib
+.env
