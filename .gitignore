@@ -2,3 +2,4 @@
 /assets/js/email/initEmail.js
 node_modules
 jasmine/lib
+.env

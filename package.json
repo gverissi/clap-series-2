@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/gverissi/clap-series-2#readme",
   "dependencies": {
+    "browserify": "^16.5.1",
+    "dotenv": "^8.2.0",
     "emailjs-com": "^2.4.1"
   }
 }

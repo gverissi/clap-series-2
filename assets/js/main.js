@@ -11,6 +11,20 @@
  * 
  */
 
+// require('../../dotenv').config()
+// import('../../dotenv').config()
+// import('dotenv')
+// import { dotenv/config } from 'dotenv/config.js'
+// import {} from 'dotenv/config'
+// const result = dotenv.config()
+// import 'dotenv/config'
+// import dotenv from 'dotenv'
+
+// const result = dotenv.config()
+// if (result.error) {
+//   throw result.error
+// }
+// console.log(result.parsed)
 
 var heroHandIndexes = []
 var vilainHandIndexes = []
